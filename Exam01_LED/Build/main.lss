@@ -3,9 +3,9 @@ main.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00003438  08003000  08003000  00003000  2**2
+  0 .text         00003424  08003000  08003000  00003000  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         000000e4  20000000  08006438  00008000  2**2
+  1 .data         000000e4  20000000  08006424  00008000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000e34  20000200  08006800  00008200  2**9
                   ALLOC
@@ -13,23 +13,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   4 .ARM.attributes 00000033  00000000  00000000  000080e4  2**0
                   CONTENTS, READONLY
-  5 .debug_info   00006427  00000000  00000000  00008117  2**0
+  5 .debug_info   00006407  00000000  00000000  00008117  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00002268  00000000  00000000  0000e53e  2**0
+  6 .debug_abbrev 00002268  00000000  00000000  0000e51e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_loc    00004b61  00000000  00000000  000107a6  2**0
+  7 .debug_loc    00004b61  00000000  00000000  00010786  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_aranges 00000848  00000000  00000000  00015307  2**0
+  8 .debug_aranges 00000848  00000000  00000000  000152e7  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_ranges 00000c80  00000000  00000000  00015b4f  2**0
+  9 .debug_ranges 00000c80  00000000  00000000  00015b2f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_line   000026b6  00000000  00000000  000167cf  2**0
+ 10 .debug_line   000026b6  00000000  00000000  000167af  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    00001cfa  00000000  00000000  00018e85  2**0
+ 11 .debug_str    00001cfa  00000000  00000000  00018e65  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .comment      00000070  00000000  00000000  0001ab7f  2**0
+ 12 .comment      00000070  00000000  00000000  0001ab5f  2**0
                   CONTENTS, READONLY
- 13 .debug_frame  000012c4  00000000  00000000  0001abf0  2**2
+ 13 .debug_frame  000012c4  00000000  00000000  0001abd0  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -3652,7 +3652,7 @@ void Hw_StartUp_Init(void)
  8003d58:	4685      	mov	sp, r0
  8003d5a:	4770      	bx	lr
  8003d5c:	20000000 	.word	0x20000000
- 8003d60:	08006438 	.word	0x08006438
+ 8003d60:	08006424 	.word	0x08006424
  8003d64:	08003019 	.word	0x08003019
  8003d68:	200000e4 	.word	0x200000e4
  8003d6c:	20000200 	.word	0x20000200
@@ -6773,7 +6773,7 @@ void Virtual_Com_Port_Reset(void)
 
   /* Current Feature initialization */
   pInformation->Current_Feature = Virtual_Com_Port_ConfigDescriptor[7];
- 80049d0:	f246 33f4 	movw	r3, #25588	; 0x63f4
+ 80049d0:	f246 33e0 	movw	r3, #25568	; 0x63e0
  80049d4:	f6c0 0300 	movt	r3, #2048	; 0x800
 * Return         : None.
 *******************************************************************************/
@@ -13013,26 +13013,25 @@ void CTR_LP(void)
  800637c:	00203e3e 	.word	0x00203e3e
 
 08006380 <Virtual_Com_Port_StringVendor>:
- 8006380:	00530326 004d0054 00630069 006f0072     &.S.T.M.i.c.r.o.
- 8006390:	006c0065 00630065 00720074 006e006f     e.l.e.c.t.r.o.n.
- 80063a0:	00630069 00000073                       i.c.s...
+ 8006380:	00430312 002d004d 00300039 00200030     ..C.M.-.9.0.0. .
+ 8006390:	00000020                                 ...
 
-080063a8 <Virtual_Com_Port_DeviceDescriptor>:
- 80063a8:	02000112 40000002 57400483 02010200     .......@..@W....
- 80063b8:	00000103                                ....
+08006394 <Virtual_Com_Port_DeviceDescriptor>:
+ 8006394:	02000112 40000002 ff48fff1 02010200     .......@..H.....
+ 80063a4:	00000100                                ....
 
-080063bc <Virtual_Com_Port_StringLangID>:
- 80063bc:	04090304                                ....
+080063a8 <Virtual_Com_Port_StringLangID>:
+ 80063a8:	04090304                                ....
 
-080063c0 <Virtual_Com_Port_StringProduct>:
- 80063c0:	00530332 004d0054 00320033 00560020     2.S.T.M.3.2. .V.
- 80063d0:	00720069 00750074 006c0061 00430020     i.r.t.u.a.l. .C.
- 80063e0:	004d004f 00500020 0072006f 00200074     O.M. .P.o.r.t. .
- 80063f0:	00000020                                 ...
+080063ac <Virtual_Com_Port_StringProduct>:
+ 80063ac:	00520332 0042004f 0054004f 00530049     2.R.O.B.O.T.I.S.
+ 80063bc:	00560020 00720069 00750074 006c0061      .V.i.r.t.u.a.l.
+ 80063cc:	00430020 004d004f 00500020 0072006f      .C.O.M. .P.o.r.
+ 80063dc:	00000074                                t...
 
-080063f4 <Virtual_Com_Port_ConfigDescriptor>:
- 80063f4:	00430209 c0000102 00040932 02020100     ..C.....2.......
- 8006404:	24050001 05011000 01000124 02022404     ...$....$....$..
- 8006414:	00062405 82050701 ff000803 00010409     .$..............
- 8006424:	00000a02 03050700 00004002 02810507     .........@......
- 8006434:	00000040                                @...
+080063e0 <Virtual_Com_Port_ConfigDescriptor>:
+ 80063e0:	00430209 80000102 00040900 02020100     ..C.............
+ 80063f0:	24050001 05011000 01000124 02022404     ...$....$....$..
+ 8006400:	00062405 82050701 ff000803 00010409     .$..............
+ 8006410:	00000a02 03050700 00004002 02810507     .........@......
+ 8006420:	00000040                                @...

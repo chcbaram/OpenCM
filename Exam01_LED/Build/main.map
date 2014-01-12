@@ -823,7 +823,7 @@ LOAD /Users/imac/Develop/stm32f4/arm_gcc/gcc-arm-none-eabi-4_7-2013q3/bin/../lib
                 0x0000000000000100                _Minimum_Stack_Size = 0x100
                 0x0000000000000001                ASSERT ((ORIGIN (FLASH) == ALIGN (ORIGIN (FLASH), 0x80)), Start of memory region flash not aligned for startup vector table)
 
-.text           0x0000000008003000     0x3438
+.text           0x0000000008003000     0x3424
                 0x0000000008003000                . = ALIGN (0x80)
                 0x0000000007803000                _isr_vectorsflash_offs = (. - 0x800000)
  *(.isr_vectorsflash)
@@ -1162,48 +1162,48 @@ LOAD /Users/imac/Develop/stm32f4/arm_gcc/gcc-arm-none-eabi-4_7-2013q3/bin/../lib
  .rodata.str1.4
                 0x00000000080060a4      0x2dc Ap_GLcdMenu.o
  .rodata.Virtual_Com_Port_StringVendor
-                0x0000000008006380       0x28 usb_desc.o
+                0x0000000008006380       0x14 usb_desc.o
                 0x0000000008006380                Virtual_Com_Port_StringVendor
  .rodata.Virtual_Com_Port_DeviceDescriptor
-                0x00000000080063a8       0x14 usb_desc.o
-                0x00000000080063a8                Virtual_Com_Port_DeviceDescriptor
+                0x0000000008006394       0x14 usb_desc.o
+                0x0000000008006394                Virtual_Com_Port_DeviceDescriptor
  .rodata.Virtual_Com_Port_StringLangID
-                0x00000000080063bc        0x4 usb_desc.o
-                0x00000000080063bc                Virtual_Com_Port_StringLangID
+                0x00000000080063a8        0x4 usb_desc.o
+                0x00000000080063a8                Virtual_Com_Port_StringLangID
  .rodata.Virtual_Com_Port_StringProduct
-                0x00000000080063c0       0x34 usb_desc.o
-                0x00000000080063c0                Virtual_Com_Port_StringProduct
+                0x00000000080063ac       0x34 usb_desc.o
+                0x00000000080063ac                Virtual_Com_Port_StringProduct
  .rodata.Virtual_Com_Port_ConfigDescriptor
-                0x00000000080063f4       0x44 usb_desc.o
-                0x00000000080063f4                Virtual_Com_Port_ConfigDescriptor
+                0x00000000080063e0       0x44 usb_desc.o
+                0x00000000080063e0                Virtual_Com_Port_ConfigDescriptor
  *(.glue_7 .glue_7t)
  .glue_7        0x0000000000000000        0x0 linker stubs
  .glue_7t       0x0000000000000000        0x0 linker stubs
-                0x0000000008006438                . = ALIGN (0x4)
+                0x0000000008006424                . = ALIGN (0x4)
 
-.vfp11_veneer   0x0000000008006438        0x0
+.vfp11_veneer   0x0000000008006424        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000008006438        0x0
+.v4_bx          0x0000000008006424        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000008006438        0x0
+.iplt           0x0000000008006424        0x0
  .iplt          0x0000000000000000        0x0 main.o
 
-.rel.dyn        0x0000000008006438        0x0
+.rel.dyn        0x0000000008006424        0x0
  .rel.iplt      0x0000000000000000        0x0 main.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0000000008006438        0x0
-                0x0000000008006438                __exidx_start = .
+.ARM            0x0000000008006424        0x0
+                0x0000000008006424                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008006438                __exidx_end = .
-                0x0000000008006438                _etext = .
-                0x0000000008006438                _sidata = _etext
+                0x0000000008006424                __exidx_end = .
+                0x0000000008006424                _etext = .
+                0x0000000008006424                _sidata = _etext
 
-.data           0x0000000020000000       0xe4 load address 0x0000000008006438
+.data           0x0000000020000000       0xe4 load address 0x0000000008006424
                 0x0000000020000000                . = .
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
@@ -1247,7 +1247,7 @@ LOAD /Users/imac/Develop/stm32f4/arm_gcc/gcc-arm-none-eabi-4_7-2013q3/bin/../lib
                 0x00000000200000e4                . = ALIGN (0x4)
                 0x00000000200000e4                _edata = .
 
-.igot.plt       0x00000000200000e4        0x0 load address 0x000000000800651c
+.igot.plt       0x00000000200000e4        0x0 load address 0x0000000008006508
  .igot.plt      0x0000000000000000        0x0 main.o
 
 .bss            0x0000000020000200      0xe34 load address 0x0000000008006800
@@ -1427,7 +1427,7 @@ LOAD /Users/imac/Develop/stm32f4/arm_gcc/gcc-arm-none-eabi-4_7-2013q3/bin/../lib
                 0x0000000020004c00                PROVIDE (_Stack_Init, __Stack_Init)
 OUTPUT(main.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x6427
+.debug_info     0x0000000000000000     0x6407
  .debug_info    0x0000000000000000      0x13d main.o
  .debug_info    0x000000000000013d       0x7e Ap.o
  .debug_info    0x00000000000001bb      0x3a5 Ap_GLcdMenu.o
@@ -1442,18 +1442,18 @@ OUTPUT(main.elf elf32-littlearm)
  .debug_info    0x0000000000001cdb      0x160 Hw_ISR.o
  .debug_info    0x0000000000001e3b      0x3b1 Hw_Timer.o
  .debug_info    0x00000000000021ec      0x14a Hw_VCom.o
- .debug_info    0x0000000000002336      0x154 usb_desc.o
- .debug_info    0x000000000000248a      0x295 usb_endp.o
- .debug_info    0x000000000000271f      0x372 usb_istr.o
- .debug_info    0x0000000000002a91      0xb28 usb_prop.o
- .debug_info    0x00000000000035b9      0x34a usb_pwr.o
- .debug_info    0x0000000000003903      0x664 hw_config.o
- .debug_info    0x0000000000003f67      0xddb usb_core.o
- .debug_info    0x0000000000004d42      0x46d usb_init.o
- .debug_info    0x00000000000051af      0x194 usb_mem.o
- .debug_info    0x0000000000005343      0xd92 usb_regs.o
- .debug_info    0x00000000000060d5      0x1b9 usb_sil.o
- .debug_info    0x000000000000628e      0x199 usb_int.o
+ .debug_info    0x0000000000002336      0x144 usb_desc.o
+ .debug_info    0x000000000000247a      0x295 usb_endp.o
+ .debug_info    0x000000000000270f      0x372 usb_istr.o
+ .debug_info    0x0000000000002a81      0xb18 usb_prop.o
+ .debug_info    0x0000000000003599      0x34a usb_pwr.o
+ .debug_info    0x00000000000038e3      0x664 hw_config.o
+ .debug_info    0x0000000000003f47      0xddb usb_core.o
+ .debug_info    0x0000000000004d22      0x46d usb_init.o
+ .debug_info    0x000000000000518f      0x194 usb_mem.o
+ .debug_info    0x0000000000005323      0xd92 usb_regs.o
+ .debug_info    0x00000000000060b5      0x1b9 usb_sil.o
+ .debug_info    0x000000000000626e      0x199 usb_int.o
 
 .debug_abbrev   0x0000000000000000     0x2268
  .debug_abbrev  0x0000000000000000       0xd3 main.o
